@@ -13,28 +13,20 @@
   }
   
   while(numeroUsuario != numeroSecreto) {
-  
-    while (numeroUsuario < numeroSecreto) {
+    if (numeroUsuario > numeroSecreto){
       alert(`VOCÊ ERROU! 🤣 \nO Número Secreto é MAIOR que ${numeroUsuario}! 🔼`);
-      numeroUsuario = prompt("🟡 Tente Novamente! Informe outro número entre 1 e 1000");
-  
-      while (numeroUsuario < 1 || numeroUsuario > 1000) {
-        numeroUsuario = prompt("🔴 Erro! Informe um número válido, entre 1 e 1000");
-      }
-      numeroUsuario = Number(numeroUsuario);
-      console.log(`Número Secreto: ${numeroSecreto} | Número Usuário: ${numeroUsuario}`);    
-    }
-  
-    while (numeroUsuario > numeroSecreto) {
+    } else {
       alert(`VOCÊ ERROU! 🤣 \nO Número Secreto é MENOR que ${numeroUsuario}! 🔽`);
-      numeroUsuario = prompt("🟡 Tente Novamente! Informe outro número entre 1 e 1000");
-      while (numeroUsuario < 1 || numeroUsuario > 1000) {
-        numeroUsuario = prompt("🔴 Erro! Informe um número válido, entre 1 e 1000");        
-      }
-      numeroUsuario = Number(numeroUsuario);
-      console.log(`Número Secreto: ${numeroSecreto} | Número Usuário: ${numeroUsuario}`);
-    }        
-  }  
+    }
+
+    numeroUsuario = prompt("🟡 Tente Novamente! Informe outro número entre 1 e 1000");
+
+    while (numeroUsuario < 1 || numeroUsuario > 1000) {
+      numeroUsuario = prompt("🔴 Erro! Informe um número válido, entre 1 e 1000");        
+    }
+
+    numeroUsuario = Number(numeroUsuario);
+  }
   
   alert(`VOCÊ ACERTOU! 🏆 \n${numeroUsuario} é o Número Secreto!🎉`);
   alert(`JOGO ENCERRADO!!!`);
